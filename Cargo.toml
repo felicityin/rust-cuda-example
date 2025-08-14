@@ -1,0 +1,14 @@
+[package]
+name = "rust-cuda-example"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+libc = "0.2"
+rand = "0.5.5"
+lazy_static = "1.5.0"
+cudart = { git = "https://github.com/matter-labs/era-cuda.git", rev = "0ac0eeb7fdef62e3ef05c97de0c8accbc963f3bc" }
+cudart-sys = { git = "https://github.com/matter-labs/era-cuda.git", rev = "0ac0eeb7fdef62e3ef05c97de0c8accbc963f3bc" }
+
+[build-dependencies]
+cc = "1.0"

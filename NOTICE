@@ -1,0 +1,4 @@
+This project includes modified code from RISC Zero, Inc.
+Changes made:
+- build-kernel
+- kernels/cuda/cuda.h

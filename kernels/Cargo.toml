@@ -1,0 +1,14 @@
+[package]
+name = "kernels"
+version = { workspace = true }
+edition = { workspace = true }
+
+[dependencies]
+libc = "0.2"
+rand = "0.5.5"
+lazy_static = "1.5.0"
+cudart = { git = "https://github.com/matter-labs/era-cuda.git", rev = "0ac0eeb7fdef62e3ef05c97de0c8accbc963f3bc" }
+cudart-sys = { git = "https://github.com/matter-labs/era-cuda.git", rev = "0ac0eeb7fdef62e3ef05c97de0c8accbc963f3bc" }
+
+[build-dependencies]
+build-kernel.workspace = true

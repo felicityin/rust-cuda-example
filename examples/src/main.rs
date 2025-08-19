@@ -40,8 +40,9 @@ fn vector_add_v1(v1: &Vec<f32>, v2: &Vec<f32>) {
 
 fn vector_add_v2(v1: &Vec<f32>, v2: &Vec<f32>) {
     let mut gpu_res: Vec<c_float> = vec![0.0f32; VEC_SIZE];
-    unsafe {
-        launch_vector_add_v2(v1.as_ptr(), v2.as_ptr(), gpu_res.as_mut_ptr(), VEC_SIZE);
-    }
+    ffi_wrap(|| unsafe {
+        launch_vector_add_v2(v1.as_ptr(), v2.as_ptr(), gpu_res.as_mut_ptr(), VEC_SIZE)
+    })
+    .unwrap();
     println!("GPU result: {:?}", gpu_res);
 }

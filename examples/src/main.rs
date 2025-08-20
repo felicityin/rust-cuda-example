@@ -2,6 +2,7 @@ use std::ffi::c_float;
 
 use kernels::*;
 use rand::Rng;
+use tracing_subscriber::fmt;
 
 extern crate rand;
 
@@ -10,6 +11,8 @@ const MAX: f32 = 10.;
 const MIN: f32 = 0.;
 
 fn main() {
+    fmt::init();
+
     let mut v1: Vec<f32> = Vec::new();
     let mut v2: Vec<f32> = Vec::new();
 

@@ -8,5 +8,5 @@ A ​​Rust and CUDA Integration Example.
 
 ```shell
 cd examples
-cargo run
+RUST_LOG=trace cargo run -r
 ```

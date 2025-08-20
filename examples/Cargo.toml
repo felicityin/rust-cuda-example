@@ -7,6 +7,7 @@ edition = { workspace = true }
 libc = "0.2"
 rand = "0.5.5"
 lazy_static = "1.5.0"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 cudart = { git = "https://github.com/matter-labs/era-cuda.git", rev = "0ac0eeb7fdef62e3ef05c97de0c8accbc963f3bc" }
 cudart-sys = { git = "https://github.com/matter-labs/era-cuda.git", rev = "0ac0eeb7fdef62e3ef05c97de0c8accbc963f3bc" }
 

@@ -7,8 +7,10 @@ fn main() {
             "cuda/vec_add_v1.cu",
             "cuda/vec_add_v2.cu",
             "cuda/vec_add_v3.cu",
+            "kernels/add_sub.cu",
         ])
-        .deps(["cuda"])
+        .deps(["cuda", "include"])
+        .include("include")
         .include("cuda")
         .compile("kernels");
 }

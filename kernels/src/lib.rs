@@ -1,7 +1,21 @@
+// Modified by felicityin
+// Copyright RISC Zero, Inc.
+// Licensed under the Apache License, Version 2.0, see LICENSE for details.
+// SPDX-License-Identifier: Apache-2.0
+
+pub mod buffer;
+pub mod perf;
+pub mod tracker;
+
+pub use buffer::*;
+pub use perf::*;
+pub use tracker::*;
+
 use std::ffi::CStr;
 use std::ffi::c_float;
 
 use anyhow::{Result, anyhow};
+use cust::memory::DevicePointer;
 
 unsafe extern "C" {
     pub fn launch_vector_add_v1(
@@ -15,6 +29,13 @@ unsafe extern "C" {
         v1: *const c_float,
         v2: *const c_float,
         result: *mut c_float,
+        n: usize,
+    ) -> *const std::os::raw::c_char;
+
+    pub fn launch_vector_add_v3(
+        v1: DevicePointer<u8>,
+        v2: DevicePointer<u8>,
+        result: DevicePointer<u8>,
         n: usize,
     ) -> *const std::os::raw::c_char;
 }

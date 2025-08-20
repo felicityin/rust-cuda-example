@@ -1,3 +1,8 @@
+// Modified by felicityin
+// Copyright RISC Zero, Inc.
+// Licensed under the Apache License, Version 2.0, see LICENSE for details.
+// SPDX-License-Identifier: Apache-2.0
+
 #include <stdint.h>
 #include <string.h>
 #include <stdexcept>

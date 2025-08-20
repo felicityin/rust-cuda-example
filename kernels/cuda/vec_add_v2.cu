@@ -12,7 +12,6 @@ extern "C" const char* launch_vector_add_v2(
 ) {
     if (!v1 || !v2 || !result || n == 0) {
         fprintf(stderr, "Invalid parameters\n");
-        return "Invalid parameters";
     }
 
     float *dev_v1, *dev_v2, *dev_res;

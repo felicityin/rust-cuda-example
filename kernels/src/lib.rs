@@ -16,6 +16,7 @@ use std::ffi::c_float;
 
 use anyhow::{Result, anyhow};
 use cust::memory::DevicePointer;
+use cust::prelude::*;
 
 unsafe extern "C" {
     pub fn launch_vector_add_v1(
@@ -36,6 +37,12 @@ unsafe extern "C" {
         v1: DevicePointer<u8>,
         v2: DevicePointer<u8>,
         result: DevicePointer<u8>,
+        n: usize,
+    ) -> *const std::os::raw::c_char;
+
+    pub fn add_sub_events_to_rows(
+        events: DevicePointer<u8>,
+        rows: DevicePointer<u8>,
         n: usize,
     ) -> *const std::os::raw::c_char;
 }
@@ -62,4 +69,12 @@ where
         };
         Err(anyhow!(what))
     }
+}
+
+pub fn init_cuda() -> Context {
+    cust::init(CudaFlags::empty()).unwrap();
+    let device = Device::get_device(0).unwrap();
+    let context = Context::new(device).unwrap();
+    context.set_flags(ContextFlags::SCHED_AUTO).unwrap();
+    context
 }

@@ -11,4 +11,17 @@ tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 cudart = { git = "https://github.com/matter-labs/era-cuda.git", rev = "0ac0eeb7fdef62e3ef05c97de0c8accbc963f3bc" }
 cudart-sys = { git = "https://github.com/matter-labs/era-cuda.git", rev = "0ac0eeb7fdef62e3ef05c97de0c8accbc963f3bc" }
 
+p3-field = { git = "https://github.com/ProjectZKM/Plonky3" }
+p3-matrix = { git = "https://github.com/ProjectZKM/Plonky3" }
+p3-koala-bear = { git = "https://github.com/ProjectZKM/Plonky3" }
+
+zkm-core-executor = { git = "https://github.com/ProjectZKM/Ziren.git" }
+zkm-core-machine = { git = "https://github.com/ProjectZKM/Ziren.git" }
+zkm-stark = { git = "https://github.com/ProjectZKM/Ziren.git" }
+
 kernels.workspace = true
+
+[patch."https://github.com/ProjectZKM/Ziren"]
+zkm-core-executor = { git = "https://github.com/felicityin/zkMIPS", branch = "repr" }
+zkm-core-machine = { git = "https://github.com/felicityin/zkMIPS", branch = "repr" }
+zkm-stark = { git = "https://github.com/felicityin/zkMIPS", branch = "repr" }

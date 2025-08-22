@@ -1,6 +1,6 @@
 #include "../include/kb31_t.hpp"
 #include "../include/sys.hpp"
-#include "../cuda/cuda.h"
+#include "../include/cuda.h"
 
 namespace zkm_core_machine_sys {
 __global__ void add_sub_event_to_row(

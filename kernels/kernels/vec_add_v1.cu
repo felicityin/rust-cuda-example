@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <cuda_runtime.h>
 #include <device_launch_parameters.h>
-#include "cuda.h"
-#include "vec_add.h"
+#include "../include/cuda.h"
+#include "../include/vec_add.h"
 
 extern "C" void launch_vector_add_v1(
     const float* v1,
